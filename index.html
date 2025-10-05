@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Toggle</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <h1>Dark Mode Toggle</h1>
+
+  <div class="toggle-container" id="toggleBtn">
+    <span class="material-icons">light_mode</span>
+    <span class="material-icons">dark_mode</span>
+    <div class="circle"></div>
+  </div>
+
+  <p id="status">Light Mode</p>
+
+  <script>
+    const btn = document.getElementById('toggleBtn');
+    const body = document.body;
+    const text = document.getElementById('status');
+
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      body.classList.toggle('dark-mode');
+      text.textContent = body.classList.contains('dark-mode') ? "Dark Mode" : "Light Mode";
+    });
+  </script>
+</body>
+</html>
